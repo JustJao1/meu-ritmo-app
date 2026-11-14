@@ -12,3 +12,4 @@ android/**/build/
 android/app/src/main/assets/site/
 *.keystore
 *.jks
+release-output/
