@@ -1,11 +1,20 @@
-# Mr: Meu Ritmo App
+# MR: Meu Ritmo App
 
-Aplicativo Android offline, sem login, planos ou comunidade. Desenvolvido por João Victor.
+Aplicativo Android do [Meu Ritmo](https://meuritmo.net/app), distribuído fora da Google Play Store.
 
-[Baixar APK de desenvolvimento](https://github.com/JustJao1/meu-ritmo-lite/releases/tag/v0.1.1-dev).
+A tela inicial do APK abre o serviço online em `https://meuritmo.net/app`. O login, as rotinas, as finanças, a comunidade e as assinaturas utilizam os mesmos dados do site, conforme as permissões da conta. Mudanças no site ficam disponíveis nesta tela sem necessidade de recompilar o APK.
 
-O diretório dist é a página de distribuição. Publique em Cloudflare Workers Static Assets com `npx wrangler@4.92.0 deploy` ou sirva os arquivos dist em uma hospedagem estática. O link Projeto Meu Ritmo leva ao repositório enquanto o novo endereço público não é configurado. Troque esse link pelo domínio real após validar a publicação do aplicativo principal.
+A opção **Alarmes do aparelho** abre um módulo local, acessível pelo menu do aplicativo Android. Alarmes, notas e demais dados criados nesse módulo offline ficam no aparelho e **não são sincronizados automaticamente** com a conta online. Faça backup dos dados locais antes de trocar de aparelho ou limpar o armazenamento.
 
-app-web contém a interface embarcada; android contém alarmes nativos individuais, parar e adiar, restauração após reinício e integração com agenda mediante confirmação no sistema. Dados permanecem no aparelho. O código, recursos embarcados e o APK não foram alterados pela migração de hospedagem.
+## Android e iPhone
 
-O APK v0.1.1-dev é uma versão em desenvolvimento e ainda requer testes em aparelhos Android reais. Não há promessa de alarme com aparelho desligado, parada forçada ou restrições do sistema. Guarde backups e preserve a chave de assinatura privada fora do repositório.
+- [Baixar APK oficial 1.0.1](https://github.com/JustJao1/meu-ritmo-app/releases/tag/v1.0.1) para Android 8 ou superior.
+- No iPhone, abra o [Meu Ritmo](https://meuritmo.net/app) pelo Safari e use **Adicionar à Tela de Início**. Não há um IPA distribuído.
+
+O diretório `dist` contém a página de instalação. `app-web` mantém o módulo local e `android` reúne o contêiner online, os alarmes nativos e a política de atualização.
+
+## Nova versão nativa
+
+Execute os testes antes de criar outra versão. Para atualizar um APK já instalado, é necessário recompilar e assinar com **a mesma chave privada** usada na versão anterior. O fluxo de preparação está em `.github/workflows/android-release.yml` e o script local em `scripts/release-android.ps1`. Não publique APK não assinado, com outra chave ou com a versão anterior.
+
+Os alarmes dependem das permissões do Android e podem sofrer restrições de bateria, volume e do fabricante; não funcionam com o aparelho desligado.
