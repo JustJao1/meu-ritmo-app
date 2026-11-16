@@ -45,6 +45,23 @@ public final class OnlineActivity extends Activity {
   });
   root=new LinearLayout(this);root.setOrientation(LinearLayout.VERTICAL);
   root.addView(web,new LinearLayout.LayoutParams(-1,0,1));
+  // The application uses a NoActionBar theme; menu items alone are inaccessible.
+  // Keep native alarm controls visible without covering the website.
+  final int controlHeight=(int)(48*getResources().getDisplayMetrics().density+0.5f);
+  LinearLayout controls=new LinearLayout(this);controls.setOrientation(LinearLayout.HORIZONTAL);
+  controls.setGravity(Gravity.CENTER_VERTICAL);
+  controls.setBackgroundColor(Color.rgb(250,249,245));
+  Button alarmButton=new Button(this);alarmButton.setAllCaps(false);
+  alarmButton.setText("Alarmes do aparelho");
+  alarmButton.setContentDescription("Abrir alarmes locais do aparelho");
+  alarmButton.setOnClickListener(v->startActivity(new Intent(this,MainActivity.class)));
+  Button refreshButton=new Button(this);refreshButton.setAllCaps(false);
+  refreshButton.setText("Atualizar");
+  refreshButton.setContentDescription("Recarregar Meu Ritmo online");
+  refreshButton.setOnClickListener(v->web.reload());
+  controls.addView(alarmButton,new LinearLayout.LayoutParams(0,controlHeight,2f));
+  controls.addView(refreshButton,new LinearLayout.LayoutParams(0,controlHeight,1f));
+  root.addView(controls,new LinearLayout.LayoutParams(-1,-2));
   setContentView(root);gate.protect();gate.check();web.loadUrl("https://meuritmo.net/app?source=android-app");
  }
  @Override public boolean onCreateOptionsMenu(Menu menu){menu.add(0,1,0,"Alarmes do aparelho");menu.add(0,2,1,"Atualizar");return true;}
