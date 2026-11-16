@@ -5,17 +5,17 @@ param(
 $ErrorActionPreference = 'Stop'
 $root = (Resolve-Path (Join-Path $PSScriptRoot '..')).Path
 $repo = 'JustJao1/meu-ritmo-app'
-$version = '1.0.1'
-$expectedPreviousHash = '295e5efa04d1cd1af57789c2aff3d6ee086b4125c9fe510e844edde48a054e04'
-$previousUrl = 'https://github.com/JustJao1/meu-ritmo-app/releases/download/v1.0.0/Meu-Ritmo-1.0.0.apk'
-$oldApk = Join-Path $env:TEMP 'mr-original-v1.0.0-check.apk'
+$version = '1.0.2'
+$expectedPreviousHash = '7c2ac22c23a35ca451dc8ca1389cf0a1e6a0a6cc504d4ff8d294080a97d0e6e3'
+$previousUrl = 'https://github.com/JustJao1/meu-ritmo-app/releases/download/v1.0.1/Meu-Ritmo-1.0.1.apk'
+$oldApk = Join-Path $env:TEMP 'mr-original-v1.0.1-check.apk'
 $originalLocation = Get-Location
 
 if (-not (Test-Path -LiteralPath $KeystorePath -PathType Leaf)) {
     throw "A chave de assinatura anterior nao foi encontrada em $KeystorePath. Nao crie uma chave nova: ela impediria a atualizacao por cima da versao instalada."
 }
 if (-not (Get-Command gradle -ErrorAction SilentlyContinue)) {
-    throw 'Gradle nao esta disponivel no PATH. Use a instalacao que compilou a versao 1.0.0.'
+    throw 'Gradle nao esta disponivel no PATH. Use a instalacao que compilou a versao 1.0.1.'
 }
 
 $sdk = @($env:ANDROID_SDK_ROOT, $env:ANDROID_HOME, (Join-Path $env:LOCALAPPDATA 'Android\Sdk')) |
@@ -54,8 +54,8 @@ try {
 
     $badging = (& $aapt dump badging $built | Select-Object -First 1) -join ''
     if ($badging -notmatch "name='br\.com\.joaovictor\.meuritmolite'" -or
-        $badging -notmatch "versionCode='4'" -or
-        $badging -notmatch "versionName='1\.0\.1'") {
+        $badging -notmatch "versionCode='5'" -or
+        $badging -notmatch "versionName='1\.0\.2'") {
         throw "Metadados do APK inesperados: $badging"
     }
 
