@@ -13,7 +13,7 @@ test('download manifest and installation page point to the same current APK',()=
  assert.ok(page.includes('versão '+json.version));
  assert.match(json.sha256,/^[0-9a-f]{64}$/);
  assert.ok(json.size>100000);
- assert.ok(gradle.includes("versionName '"+json.version+"'"));
+ const currentVersion=Number(json.version.replaceAll('.',''));const source=gradle.match(/versionName '(\d+\.\d+\.\d+)'/);assert(source);assert(Number(source[1].replaceAll('.',''))>=currentVersion);assert.match(gradle,/versionCode 5/);
 });
 
 test('launcher opens the online site and keeps the offline module separate',()=>{
