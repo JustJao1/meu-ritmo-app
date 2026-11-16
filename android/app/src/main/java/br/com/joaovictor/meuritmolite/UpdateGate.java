@@ -14,9 +14,29 @@ public final class UpdateGate {
    if(c.getResponseCode()!=200)throw new IOException("HTTP "+c.getResponseCode());
    ByteArrayOutputStream bytes=new ByteArrayOutputStream();try(InputStream in=c.getInputStream()){byte[] b=new byte[4096];int n;while((n=in.read(b))!=-1){bytes.write(b,0,n);if(bytes.size()>16384)throw new IOException("Policy too large");}}
    JSONObject v=new JSONObject(bytes.toString("UTF-8"));int min=v.getInt("minSupportedVersionCode");String url=v.getString("apkUrl");String message=v.optString("message","Atualize para continuar usando o aplicativo.");
-   if(!url.startsWith("https://"))throw new IOException("Invalid download URL");
+   if(min<1||!url.startsWith("https://"))throw new IOException("Invalid update policy");
+   // A successfully checked policy is safe to reuse while offline. New installs
+   // still require one successful online check before accessing local alarms.
+   activity.getSharedPreferences("mr-update-policy",Context.MODE_PRIVATE).edit()
+    .putInt("min-version",min).putString("download-url",url).apply();
    handler.post(()->{checking=false;verified=true;if(min>installedVersion()){required=true;downloadUrl=url;protect();show(message);}else{required=false;if(dialog!=null&&dialog.isShowing())dialog.dismiss();unlock();schedule();}});
-  }catch(Exception e){handler.post(()->{checking=false;required=true;protect();show("Não foi possível verificar a versão do aplicativo. Conecte-se à internet e tente novamente.");handler.postDelayed(this::check,30000);});}
+  }catch(Exception e){handler.post(()->{
+   checking=false;
+   android.content.SharedPreferences cached=activity.getSharedPreferences("mr-update-policy",Context.MODE_PRIVATE);
+   int cachedMin=cached.getInt("min-version",Integer.MAX_VALUE);
+   if(cachedMin>0&&cachedMin<=installedVersion()){
+    // The latest online minimum was satisfied; allow offline alarm management
+    // and retry the policy check when connectivity returns.
+    required=false;verified=true;
+    if(dialog!=null&&dialog.isShowing())dialog.dismiss();
+    unlock();
+    handler.postDelayed(this::check,30000);
+   }else{
+    required=true;downloadUrl=cached.getString("download-url","");
+    protect();show("Não foi possível verificar a versão do aplicativo. Conecte-se à internet e tente novamente.");
+    handler.postDelayed(this::check,30000);
+   }
+  });}
  }).start();}
  private void schedule(){handler.removeCallbacksAndMessages(null);handler.postDelayed(this::check,INTERVAL);}
  private void show(String message){if(activity.isFinishing()||(dialog!=null&&dialog.isShowing()))return;
