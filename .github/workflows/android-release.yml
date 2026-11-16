@@ -1,8 +1,14 @@
 name: Preparar APK Android assinado
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'android/**'
+      - 'app-web/**'
+      - '.github/workflows/android-release.yml'
   workflow_dispatch:
 permissions:
-  contents: read
+  contents: write
 jobs:
   release:
     runs-on: ubuntu-latest
@@ -30,10 +36,16 @@ jobs:
           KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
           KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
         run: |
-          test -n "$KEYSTORE_BASE64" && test -n "$KEYSTORE_PASSWORD" && test -n "$KEY_ALIAS" && test -n "$KEY_PASSWORD" || { echo 'Configure os quatro secrets ANDROID_* antes de compilar o APK de produção.'; exit 1; }
+          if test -z "$KEYSTORE_BASE64" || test -z "$KEYSTORE_PASSWORD" || test -z "$KEY_ALIAS" || test -z "$KEY_PASSWORD"; then
+            echo 'A assinatura original não está disponível no GitHub. O APK publicado permanece em 1.0.1.'
+            echo "ANDROID_SIGNING_READY=false" >> "$GITHUB_ENV"
+            exit 0
+          fi
           printf '%s' "$KEYSTORE_BASE64" | base64 -d > "$RUNNER_TEMP/release.jks"
           echo "ANDROID_SIGNING_STORE=$RUNNER_TEMP/release.jks" >> "$GITHUB_ENV"
+          echo "ANDROID_SIGNING_READY=true" >> "$GITHUB_ENV"
       - name: Testar e compilar APK de produção
+        if: env.ANDROID_SIGNING_READY == 'true'
         working-directory: android
         env:
           ANDROID_SIGNING_STORE: ${{ env.ANDROID_SIGNING_STORE }}
@@ -42,14 +54,35 @@ jobs:
           ANDROID_SIGNING_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
         run: gradle --no-daemon --stacktrace lintRelease testDebugUnitTest assembleRelease
       - name: Validar assinatura e hash
+        if: env.ANDROID_SIGNING_READY == 'true'
         run: |
           APK=$(find android/app/build/outputs/apk/release -name '*.apk' -type f | head -n 1)
           test -n "$APK"
           "$ANDROID_HOME/build-tools/36.0.0/apksigner" verify --verbose "$APK"
           sha256sum "$APK"
+          OLD="$RUNNER_TEMP/Meu-Ritmo-1.0.1.apk"
+          curl --fail --location --silent --show-error 'https://github.com/JustJao1/meu-ritmo-app/releases/download/v1.0.1/Meu-Ritmo-1.0.1.apk' --output "$OLD"
+          echo "7c2ac22c23a35ca451dc8ca1389cf0a1e6a0a6cc504d4ff8d294080a97d0e6e3  $OLD" | sha256sum -c -
+          OLD_CERT=$("$ANDROID_HOME/build-tools/36.0.0/apksigner" verify --print-certs "$OLD" | sed -n 's/^Signer #1 certificate SHA-256 digest: //p' | head -n 1)
+          NEW_CERT=$("$ANDROID_HOME/build-tools/36.0.0/apksigner" verify --print-certs "$APK" | sed -n 's/^Signer #1 certificate SHA-256 digest: //p' | head -n 1)
+          test -n "$OLD_CERT" && test "$OLD_CERT" = "$NEW_CERT" || { echo 'Certificado de assinatura diferente da versão instalada; publicação cancelada.'; exit 1; }
+          "$ANDROID_HOME/build-tools/36.0.0/aapt" dump badging "$APK" | head -n 1 | grep -E "versionCode='5' versionName='1\\.0\\.2'"
       - uses: actions/upload-artifact@v4
+        if: env.ANDROID_SIGNING_READY == 'true'
         with:
           name: mr-meu-ritmo-app-release-assinado
           path: android/app/build/outputs/apk/release/*.apk
           if-no-files-found: error
           retention-days: 14
+
+      - name: Publicar APK Android 1.0.2 verificado
+        if: env.ANDROID_SIGNING_READY == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          APK=$(find android/app/build/outputs/apk/release -name '*.apk' -type f | head -n 1)
+          if gh release view v1.0.2 --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            echo 'Release 1.0.2 já existe. Nada será sobrescrito.'
+            exit 0
+          fi
+          gh release create v1.0.2 "$APK#Meu-Ritmo-1.0.2.apk" --repo "$GITHUB_REPOSITORY" --target "$GITHUB_SHA" --title 'MR: Meu Ritmo App 1.0.2' --notes 'APK assinado com o certificado original, verificado contra a versão 1.0.1, com acesso online e alarmes locais.'
