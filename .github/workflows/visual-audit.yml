@@ -1,7 +1,11 @@
 name: Auditoria visual de temas (sem publicar)
 on:
   push:
-    branches: [audit/visual-themes-2026-11-13]
+    branches: [main]
+    paths:
+      - 'app-web/**'
+      - 'scripts/visual-audit.mjs'
+      - '.github/workflows/visual-audit.yml'
   workflow_dispatch:
 permissions:
   contents: read
