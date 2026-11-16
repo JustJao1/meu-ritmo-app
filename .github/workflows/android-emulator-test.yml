@@ -1,5 +1,11 @@
 name: Testar APK em emulador Android
 on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/android-emulator-test.yml'
+      - 'android/**'
+      - 'app-web/**'
   workflow_dispatch:
 permissions:
   contents: read
