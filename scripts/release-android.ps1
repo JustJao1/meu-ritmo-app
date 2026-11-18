@@ -21,6 +21,20 @@ if (-not (Get-Command gradle -ErrorAction SilentlyContinue)) {
 $sdk = @($env:ANDROID_SDK_ROOT, $env:ANDROID_HOME, (Join-Path $env:LOCALAPPDATA 'Android\Sdk')) |
     Where-Object { $_ -and (Test-Path $_) } | Select-Object -First 1
 if (-not $sdk) { throw 'Android SDK nao encontrado.' }
+# A verificacao Android Lint pode sinalizar PropertyEscape mesmo com o caminho
+# sdk.dir devidamente escapado em builds locais do Windows. A supressao abaixo
+# fica restrita a essa propriedade de maquina, mantendo todas as demais regras.
+$sdk = [string]$sdk
+$env:ANDROID_HOME = $sdk
+$env:ANDROID_SDK_ROOT = $sdk
+$localProperties = Join-Path $root 'android\local.properties'
+$sdkProperty = $sdk.Replace('\', '/').Replace(':', '\:')
+$localContent = "#noinspection PropertyEscape`nsdk.dir=$sdkProperty`n"
+[System.IO.File]::WriteAllText($localProperties, $localContent, [System.Text.Encoding]::ASCII)
+if (-not (Test-Path (Join-Path $sdk 'platforms\android-36'))) {
+    throw 'Android SDK Platform 36 nao instalado.'
+}
+Write-Host "SDK Android verificado em $sdk"
 $signer = Join-Path $sdk 'build-tools\36.0.0\apksigner.bat'
 $aapt = Join-Path $sdk 'build-tools\36.0.0\aapt.exe'
 if (-not (Test-Path $signer) -or -not (Test-Path $aapt)) {
