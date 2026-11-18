@@ -37,9 +37,9 @@ jobs:
           KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
         run: |
           if test -z "$KEYSTORE_BASE64" || test -z "$KEYSTORE_PASSWORD" || test -z "$KEY_ALIAS" || test -z "$KEY_PASSWORD"; then
-            echo 'A assinatura original não está disponível no GitHub. O APK publicado permanece em 1.0.1.'
-            echo "ANDROID_SIGNING_READY=false" >> "$GITHUB_ENV"
-            exit 0
+            echo "::error::As credenciais da chave original de assinatura Android não estão configuradas. A versão 1.0.2 NÃO foi publicada."
+            echo "É necessário configurar ANDROID_KEYSTORE_BASE64, ANDROID_KEYSTORE_PASSWORD, ANDROID_KEY_ALIAS e ANDROID_KEY_PASSWORD."
+            exit 1
           fi
           printf '%s' "$KEYSTORE_BASE64" | base64 -d > "$RUNNER_TEMP/release.jks"
           echo "ANDROID_SIGNING_STORE=$RUNNER_TEMP/release.jks" >> "$GITHUB_ENV"
