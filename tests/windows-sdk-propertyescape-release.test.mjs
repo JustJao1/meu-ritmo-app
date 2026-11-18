@@ -27,7 +27,7 @@ test('supressão não desliga os demais erros do Android Lint nem a assinatura',
 
 test('o Lint ignora exclusivamente a inspeção PropertyEscape do SDK local no Windows',()=>{
  const gradle=readFileSync('android/app/build.gradle','utf8');
- assert.match(gradle,/lint\s*\{\s*\/\/[^\n]*\n(?:[^}]*\n)*?\s*disable\s*\+=\s*\['PropertyEscape'\]/);
+ assert.match(gradle,/lint\s*\{\s*disable\s*\+=\s*\['PropertyEscape'\]/);
  assert.doesNotMatch(gradle,/abortOnError\s*(?:=|\s+)\s*false/);
  assert.doesNotMatch(gradle,/\bcheckReleaseBuilds\s*=\s*false/);
  assert.match(gradle,/signingConfig signingConfigs\.release/);
