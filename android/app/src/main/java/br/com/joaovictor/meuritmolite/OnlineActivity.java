@@ -8,9 +8,47 @@ public final class OnlineActivity extends Activity {
   web=new WebView(this);web.setBackgroundColor(Color.rgb(250,249,245));
   WebSettings settings=web.getSettings();settings.setJavaScriptEnabled(true);settings.setDomStorageEnabled(true);
   settings.setAllowFileAccess(false);settings.setAllowContentAccess(true);settings.setMixedContentMode(WebSettings.MIXED_CONTENT_NEVER_ALLOW);
-  settings.setSafeBrowsingEnabled(true);settings.setSupportMultipleWindows(false);settings.setJavaScriptCanOpenWindowsAutomatically(false);
+  settings.setSafeBrowsingEnabled(true);settings.setSupportMultipleWindows(true);settings.setJavaScriptCanOpenWindowsAutomatically(true);
   CookieManager.getInstance().setAcceptCookie(true);CookieManager.getInstance().setAcceptThirdPartyCookies(web,false);
   web.setWebChromeClient(new WebChromeClient(){
+   // Checkout Asaas is opened from a direct tap with window.open('about:blank').
+   // Allow the same-origin blank window, then hand HTTPS destinations to the
+   // device browser rather than embedding payments in an untrusted WebView.
+   @Override public boolean onCreateWindow(WebView parent,boolean isDialog,boolean isUserGesture,android.os.Message resultMsg){
+    if(!isUserGesture)return false;
+    final WebView child=new WebView(OnlineActivity.this);
+    WebSettings childSettings=child.getSettings();
+    childSettings.setJavaScriptEnabled(true);
+    childSettings.setDomStorageEnabled(true);
+    childSettings.setAllowFileAccess(false);
+    childSettings.setMixedContentMode(WebSettings.MIXED_CONTENT_NEVER_ALLOW);
+    childSettings.setSupportMultipleWindows(false);
+    child.setWebViewClient(new WebViewClient(){
+     boolean handedOff=false;
+     private void openBrowser(WebView popup,Uri url){
+      if(handedOff||url==null||!"https".equals(url.getScheme()))return;
+      handedOff=true;
+      try{startActivity(new Intent(Intent.ACTION_VIEW,url).addCategory(Intent.CATEGORY_BROWSABLE));}
+      catch(Exception e){Toast.makeText(OnlineActivity.this,"Não foi possível abrir o pagamento no navegador.",Toast.LENGTH_LONG).show();}
+      popup.post(()->{popup.stopLoading();popup.destroy();});
+     }
+     @Override public boolean shouldOverrideUrlLoading(WebView popup,WebResourceRequest request){
+      Uri target=request.getUrl();
+      if("about".equals(target.getScheme()))return false;
+      openBrowser(popup,target);
+      return true;
+     }
+     @Override public void onPageStarted(WebView popup,String url,android.graphics.Bitmap favicon){
+      Uri target=Uri.parse(url);
+      if(!"about".equals(target.getScheme()))openBrowser(popup,target);
+     }
+    });
+    WebView.WebViewTransport transport=(WebView.WebViewTransport)resultMsg.obj;
+    transport.setWebView(child);
+    resultMsg.sendToTarget();
+    return true;
+   }
+   @Override public void onCloseWindow(WebView window){if(window!=null&&window!=web)window.destroy();}
    @Override public boolean onShowFileChooser(WebView view,ValueCallback<Uri[]> callback,FileChooserParams params){
     if(fileCallback!=null){fileCallback.onReceiveValue(null);fileCallback=null;}
     fileCallback=callback;
