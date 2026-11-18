@@ -12,5 +12,11 @@ test('native controls remain visible even when the Android theme hides ActionBar
  assert.match(source,/alarmButton\.setText\("Alarmes do aparelho"\)/);
  assert.match(source,/alarmButton\.setOnClickListener\(v->startActivity\(new Intent\(this,MainActivity\.class\)\)\)/);
  assert.match(source,/refreshButton\.setOnClickListener\(v->web\.reload\(\)\)/);
- assert.match(source,/root\.addView\(controls,new LinearLayout\.LayoutParams\(-1,-2\)\)/);
+ assert.match(source,/root\\.addView\\(controls,new LinearLayout\\.LayoutParams\\(-1,-2\\)\\)/);
+ assert.match(source,/setBackgroundResource\\(R\\.drawable\\.mr_control_secondary\\)/);
+ assert.match(source,/setBackgroundResource\\(R\\.drawable\\.mr_control_primary\\)/);
+ assert.match(source,/setCompoundDrawablesWithIntrinsicBounds\\(R\\.drawable\\.mr_alarm/);
+ assert.match(source,/setCompoundDrawablesWithIntrinsicBounds\\(R\\.drawable\\.mr_refresh/);
+ assert.match(source,/screenWidthDp>=600/);
+ assert.match(source,/WindowInsets\\.Type\\.systemBars\\(\\)/);
 });

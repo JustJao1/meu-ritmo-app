@@ -82,23 +82,75 @@ public final class OnlineActivity extends Activity {
    }
   });
   root=new LinearLayout(this);root.setOrientation(LinearLayout.VERTICAL);
+  if(android.os.Build.VERSION.SDK_INT>=35)root.setOnApplyWindowInsetsListener((view,insets)->{
+   android.graphics.Insets safe=insets.getInsets(WindowInsets.Type.systemBars()|WindowInsets.Type.displayCutout()|WindowInsets.Type.ime());
+   view.setPadding(safe.left,safe.top,safe.right,safe.bottom);
+   return insets;
+  });
   root.addView(web,new LinearLayout.LayoutParams(-1,0,1));
-  // The application uses a NoActionBar theme; menu items alone are inaccessible.
-  // Keep native alarm controls visible without covering the website.
-  final int controlHeight=(int)(48*getResources().getDisplayMetrics().density+0.5f);
-  LinearLayout controls=new LinearLayout(this);controls.setOrientation(LinearLayout.HORIZONTAL);
-  controls.setGravity(Gravity.CENTER_VERTICAL);
-  controls.setBackgroundColor(Color.rgb(250,249,245));
-  Button alarmButton=new Button(this);alarmButton.setAllCaps(false);
+  // Compact, theme-matched native actions; never use platform-default raised buttons.
+  final float density=getResources().getDisplayMetrics().density;
+  final int buttonHeight=Math.round(48*density);
+  final int gap=Math.round(10*density);
+  final int inset=Math.round(14*density);
+  LinearLayout controls=new LinearLayout(this);
+  controls.setOrientation(LinearLayout.HORIZONTAL);
+  controls.setGravity(Gravity.CENTER_VERTICAL|Gravity.END);
+  controls.setPadding(inset,Math.round(8*density),inset,Math.round(10*density));
+  controls.setBackgroundColor(0xfffaf9f5);
+  Button alarmButton=new Button(this);
+  alarmButton.setAllCaps(false);
   alarmButton.setText("Alarmes do aparelho");
+  if(getResources().getConfiguration().screenWidthDp<360)alarmButton.setText("Alarmes");
   alarmButton.setContentDescription("Abrir alarmes locais do aparelho");
+  alarmButton.setTextSize(android.util.TypedValue.COMPLEX_UNIT_SP,13);
+  alarmButton.setTextColor(0xff2b302b);
+  alarmButton.setTypeface(android.graphics.Typeface.DEFAULT,android.graphics.Typeface.BOLD);
+  alarmButton.setGravity(Gravity.CENTER);
+  alarmButton.setSingleLine(true);
+  alarmButton.setEllipsize(android.text.TextUtils.TruncateAt.END);
+  alarmButton.setMinHeight(0);alarmButton.setMinimumHeight(0);
+  alarmButton.setMinWidth(0);alarmButton.setMinimumWidth(0);
+  alarmButton.setPadding(Math.round(10*density),0,Math.round(10*density),0);
+  alarmButton.setCompoundDrawablePadding(Math.round(7*density));
+  alarmButton.setCompoundDrawablesWithIntrinsicBounds(R.drawable.mr_alarm,0,0,0);
+  alarmButton.setBackgroundResource(R.drawable.mr_control_secondary);
+  alarmButton.setStateListAnimator(null);
+  alarmButton.setElevation(0f);
   alarmButton.setOnClickListener(v->startActivity(new Intent(this,MainActivity.class)));
-  Button refreshButton=new Button(this);refreshButton.setAllCaps(false);
+  Button refreshButton=new Button(this);
+  refreshButton.setAllCaps(false);
   refreshButton.setText("Atualizar");
   refreshButton.setContentDescription("Recarregar Meu Ritmo online");
+  refreshButton.setTextSize(android.util.TypedValue.COMPLEX_UNIT_SP,13);
+  refreshButton.setTextColor(0xfffaf9f5);
+  refreshButton.setTypeface(android.graphics.Typeface.DEFAULT,android.graphics.Typeface.BOLD);
+  refreshButton.setGravity(Gravity.CENTER);
+  refreshButton.setSingleLine(true);
+  refreshButton.setMinHeight(0);refreshButton.setMinimumHeight(0);
+  refreshButton.setMinWidth(0);refreshButton.setMinimumWidth(0);
+  refreshButton.setPadding(Math.round(10*density),0,Math.round(10*density),0);
+  refreshButton.setCompoundDrawablePadding(Math.round(7*density));
+  refreshButton.setCompoundDrawablesWithIntrinsicBounds(R.drawable.mr_refresh,0,0,0);
+  refreshButton.setBackgroundResource(R.drawable.mr_control_primary);
+  refreshButton.setStateListAnimator(null);
+  refreshButton.setElevation(0f);
   refreshButton.setOnClickListener(v->web.reload());
-  controls.addView(alarmButton,new LinearLayout.LayoutParams(0,controlHeight,2f));
-  controls.addView(refreshButton,new LinearLayout.LayoutParams(0,controlHeight,1f));
+  LinearLayout.LayoutParams alarmParams;
+  LinearLayout.LayoutParams refreshParams;
+  if(getResources().getConfiguration().screenWidthDp>=600){
+   alarmParams=new LinearLayout.LayoutParams(Math.round(220*density),buttonHeight);
+   refreshParams=new LinearLayout.LayoutParams(Math.round(142*density),buttonHeight);
+  }else{
+   alarmParams=new LinearLayout.LayoutParams(0,buttonHeight,1.8f);
+   refreshParams=new LinearLayout.LayoutParams(0,buttonHeight,1f);
+  }
+  alarmParams.setMargins(0,0,gap,0);
+  controls.addView(alarmButton,alarmParams);
+  controls.addView(refreshButton,refreshParams);
+  View separator=new View(this);
+  separator.setBackgroundColor(0xffe5e5df);
+  root.addView(separator,new LinearLayout.LayoutParams(-1,Math.max(1,Math.round(density))));
   root.addView(controls,new LinearLayout.LayoutParams(-1,-2));
   setContentView(root);gate.protect();gate.check();web.loadUrl("https://meuritmo.net/app?source=android-app");
  }

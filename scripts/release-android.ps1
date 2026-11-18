@@ -5,9 +5,9 @@ param(
 $ErrorActionPreference = 'Stop'
 $root = (Resolve-Path (Join-Path $PSScriptRoot '..')).Path
 $repo = 'JustJao1/meu-ritmo-app'
-$version = '1.0.2'
-$expectedPreviousHash = '7c2ac22c23a35ca451dc8ca1389cf0a1e6a0a6cc504d4ff8d294080a97d0e6e3'
-$previousUrl = 'https://github.com/JustJao1/meu-ritmo-app/releases/download/v1.0.1/Meu-Ritmo-1.0.1.apk'
+$version = '1.0.3'
+$expectedPreviousHash = '2b7ef8cb1923938a6eb1b0a49dd00ca827dacdcb221e941bd7b7c4572fe89396'
+$previousUrl = 'https://github.com/JustJao1/meu-ritmo-app/releases/download/v1.0.2/Meu-Ritmo-1.0.2.apk'
 $oldApk = Join-Path $env:TEMP 'mr-original-v1.0.1-check.apk'
 $originalLocation = Get-Location
 
@@ -68,8 +68,8 @@ try {
 
     $badging = (& $aapt dump badging $built | Select-Object -First 1) -join ''
     if ($badging -notmatch "name='br\.com\.joaovictor\.meuritmolite'" -or
-        $badging -notmatch "versionCode='5'" -or
-        $badging -notmatch "versionName='1\.0\.2'") {
+        $badging -notmatch "versionCode='6'" -or
+        $badging -notmatch "versionName='1\.0\.3'") {
         throw "Metadados do APK inesperados: $badging"
     }
 
@@ -80,7 +80,7 @@ try {
     }
     $previousDigest = Get-SigningDigest $oldApk
     if ($newDigest -ne $previousDigest) {
-        throw 'Certificado de assinatura diferente da versao 1.0.0. Nao publique: a atualizacao nao sera instalavel por cima.'
+        throw 'Certificado de assinatura diferente da versao 1.0.2. Nao publique: a atualizacao nao sera instalavel por cima.'
     }
 
     $outputDir = Join-Path $root 'release-output'
@@ -92,7 +92,7 @@ try {
     Write-Host "APK assinado e verificado: $outputApk"
     Write-Host "SHA256: $hash"
     Write-Host "Tamanho: $size bytes"
-    Write-Host 'Certificado confere com a versao 1.0.0.'
+    Write-Host 'Certificado confere com a versao 1.0.2.'
 
     if ($Publish) {
         if (-not (Get-Command gh -ErrorAction SilentlyContinue)) {
@@ -107,7 +107,7 @@ try {
         if (@($existingReleases | Where-Object { $_.tagName -eq "v$version" }).Count -gt 0) {
             throw "A release v$version ja existe. Nao sera sobrescrita."
         }
-        & gh release create "v$version" $outputApk --repo $repo --target main --title "MR: Meu Ritmo App $version" --notes 'Atualizacao do aplicativo Android. O ambiente online apresenta as funcoes e os temas atuais de meuritmo.net. Mantida a assinatura da versao 1.0.0 para atualizacao sem reinstalacao.'
+        & gh release create "v$version" $outputApk --repo $repo --target main --title "MR: Meu Ritmo App $version" --notes 'Atualizacao do aplicativo Android. O ambiente online apresenta as funcoes e os temas atuais de meuritmo.net. Mantida a assinatura da versao 1.0.2 para atualizacao sem reinstalacao.'
         if ($LASTEXITCODE -ne 0) { throw 'Nao foi possivel publicar a release no GitHub.' }
         Write-Host "Release publicada: https://github.com/$repo/releases/tag/v$version"
         Write-Host 'Ainda e preciso atualizar a pagina de download e a politica de atualizacao do site, apos conferir o arquivo publicado.'
