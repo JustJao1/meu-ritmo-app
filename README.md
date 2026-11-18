@@ -8,7 +8,7 @@ A opção **Alarmes do aparelho** abre um módulo local, acessível pelo menu do
 
 ## Android e iPhone
 
-- [Baixar APK oficial 1.0.2](https://github.com/JustJao1/meu-ritmo-app/releases/tag/v1.0.2) para Android 8 ou superior.
+- [Baixar APK oficial 1.0.3](https://github.com/JustJao1/meu-ritmo-app/releases/tag/v1.0.3) para Android 8 ou superior.
 - No iPhone, abra o [Meu Ritmo](https://meuritmo.net/app) pelo Safari e use **Adicionar à Tela de Início**. Não há um IPA distribuído.
 
 O diretório `dist` contém a página de instalação. `app-web` mantém o módulo local e `android` reúne o contêiner online, os alarmes nativos e a política de atualização.

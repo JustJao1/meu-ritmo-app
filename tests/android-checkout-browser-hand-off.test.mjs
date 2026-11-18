@@ -29,5 +29,5 @@ test('publicação nativa exige a mesma chave e certificado da versão instalada
  assert(release.includes('test "$OLD_CERT" = "$NEW_CERT"'));
  assert(release.includes('exit 1'));
  assert(release.includes('A versão 1.0.3 NÃO foi publicada.'));
- assert.equal(metadata.version,'1.0.2'); // 1.0.3 has not been signed or published
+ assert.equal(metadata.version,'1.0.3'); // published and signed APK available
 });
