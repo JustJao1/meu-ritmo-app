@@ -98,8 +98,15 @@ try {
         if (-not (Get-Command gh -ErrorAction SilentlyContinue)) {
             throw 'GitHub CLI (gh) nao encontrado. O APK foi gerado, mas nao publicado.'
         }
-        & gh release view "v$version" --repo $repo --json tagName *> $null
-        if ($LASTEXITCODE -eq 0) { throw "A release v$version ja existe. Nao sera sobrescrita." }
+        # Uma release inexistente e' esperada. "gh release view" escreve no
+        # stderr e PowerShell com ErrorActionPreference=Stop interrompe a
+        # execucao antes de permitir sua criacao. Consultar a lista evita isso.
+        $existingReleasesJson = (& gh release list --repo $repo --json tagName --limit 100) -join [Environment]::NewLine
+        if ($LASTEXITCODE -ne 0) { throw 'Nao foi possivel consultar as releases no GitHub.' }
+        $existingReleases = @($existingReleasesJson | ConvertFrom-Json)
+        if (@($existingReleases | Where-Object { $_.tagName -eq "v$version" }).Count -gt 0) {
+            throw "A release v$version ja existe. Nao sera sobrescrita."
+        }
         & gh release create "v$version" $outputApk --repo $repo --target main --title "MR: Meu Ritmo App $version" --notes 'Atualizacao do aplicativo Android. O ambiente online apresenta as funcoes e os temas atuais de meuritmo.net. Mantida a assinatura da versao 1.0.0 para atualizacao sem reinstalacao.'
         if ($LASTEXITCODE -ne 0) { throw 'Nao foi possivel publicar a release no GitHub.' }
         Write-Host "Release publicada: https://github.com/$repo/releases/tag/v$version"
