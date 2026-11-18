@@ -4,6 +4,11 @@ def signingPassword = System.getenv('ANDROID_SIGNING_STORE_PASSWORD')
 def signingAlias = System.getenv('ANDROID_SIGNING_KEY_ALIAS')
 def signingKeyPassword = System.getenv('ANDROID_SIGNING_KEY_PASSWORD')
 android {
+ // O Android Lint interpreta incorretamente sdk.dir do local.properties no Windows
+ // mesmo com C\:/ e / no caminho. Desabilitar apenas PropertyEscape, não o lint.
+ lint {
+  disable += ['PropertyEscape']
+ }
  namespace 'br.com.joaovictor.meuritmolite'
  compileSdk 36
  defaultConfig {
