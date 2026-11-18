@@ -8,14 +8,14 @@ $repo = 'JustJao1/meu-ritmo-app'
 $version = '1.0.3'
 $expectedPreviousHash = '2b7ef8cb1923938a6eb1b0a49dd00ca827dacdcb221e941bd7b7c4572fe89396'
 $previousUrl = 'https://github.com/JustJao1/meu-ritmo-app/releases/download/v1.0.2/Meu-Ritmo-1.0.2.apk'
-$oldApk = Join-Path $env:TEMP 'mr-original-v1.0.1-check.apk'
+$oldApk = Join-Path $env:TEMP 'mr-original-v1.0.2-check.apk'
 $originalLocation = Get-Location
 
 if (-not (Test-Path -LiteralPath $KeystorePath -PathType Leaf)) {
     throw "A chave de assinatura anterior nao foi encontrada em $KeystorePath. Nao crie uma chave nova: ela impediria a atualizacao por cima da versao instalada."
 }
 if (-not (Get-Command gradle -ErrorAction SilentlyContinue)) {
-    throw 'Gradle nao esta disponivel no PATH. Use a instalacao que compilou a versao 1.0.1.'
+    throw 'Gradle nao esta disponivel no PATH. Use a instalacao que compilou a versao 1.0.2.'
 }
 
 $sdk = @($env:ANDROID_SDK_ROOT, $env:ANDROID_HOME, (Join-Path $env:LOCALAPPDATA 'Android\Sdk')) |
@@ -76,7 +76,7 @@ try {
     $newDigest = Get-SigningDigest $built
     Invoke-WebRequest -Uri $previousUrl -OutFile $oldApk
     if ((Get-FileHash -Algorithm SHA256 $oldApk).Hash.ToLowerInvariant() -ne $expectedPreviousHash) {
-        throw 'O arquivo 1.0.0 publicado nao corresponde ao hash esperado. Nada foi publicado.'
+        throw 'O arquivo 1.0.2 publicado nao corresponde ao hash esperado. Nada foi publicado.'
     }
     $previousDigest = Get-SigningDigest $oldApk
     if ($newDigest -ne $previousDigest) {
