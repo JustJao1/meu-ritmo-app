@@ -1,4 +1,14 @@
-# Meu Ritmo® App
+# Meu Ritmo App
+
+**Android companion for the Meu Ritmo web platform**
+
+[Web application](https://meuritmo.net/app) · [APK releases](https://github.com/JustJao1/meu-ritmo-app/releases) · [Developer portfolio](https://github.com/JustJao1/meu-ritmo/blob/main/PORTFOLIO.md)
+
+Access the online Meu Ritmo platform from Android, with a separate offline module for native device alarms and local notes. The repository includes the Android container, local module and release workflow.
+
+---
+
+## Documentação técnica (Português)
 
 Aplicativo Android do [Meu Ritmo](https://meuritmo.net/app), distribuído fora da Google Play Store.
 
