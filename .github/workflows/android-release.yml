@@ -1,5 +1,11 @@
 name: Preparar APK Android assinado
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'android/**'
+      - 'app-web/**'
+      - '.github/workflows/android-release.yml'
   workflow_dispatch:
 permissions:
   contents: write
@@ -31,7 +37,7 @@ jobs:
           KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
         run: |
           if test -z "$KEYSTORE_BASE64" || test -z "$KEYSTORE_PASSWORD" || test -z "$KEY_ALIAS" || test -z "$KEY_PASSWORD"; then
-            echo "::error::As credenciais da chave original de assinatura Android não estão configuradas. A versão 1.0.3 NÃO foi publicada."
+            echo "::error::As credenciais da chave original de assinatura Android não estão configuradas. A versão 1.0.4 NÃO foi publicada."
             echo "É necessário configurar ANDROID_KEYSTORE_BASE64, ANDROID_KEYSTORE_PASSWORD, ANDROID_KEY_ALIAS e ANDROID_KEY_PASSWORD."
             exit 1
           fi
@@ -54,13 +60,13 @@ jobs:
           test -n "$APK"
           "$ANDROID_HOME/build-tools/36.0.0/apksigner" verify --verbose "$APK"
           sha256sum "$APK"
-          OLD="$RUNNER_TEMP/Meu-Ritmo-1.0.2.apk"
-          curl --fail --location --silent --show-error 'https://github.com/JustJao1/meu-ritmo-app/releases/download/v1.0.2/Meu-Ritmo-1.0.2.apk' --output "$OLD"
-          echo "2b7ef8cb1923938a6eb1b0a49dd00ca827dacdcb221e941bd7b7c4572fe89396  $OLD" | sha256sum -c -
+          OLD="$RUNNER_TEMP/Meu-Ritmo-1.0.3.apk"
+          curl --fail --location --silent --show-error 'https://github.com/JustJao1/meu-ritmo-app/releases/download/v1.0.3/Meu-Ritmo-1.0.3.apk' --output "$OLD"
+          echo "05289c90bacdf129e1396ca5bc5cb1f1a5b3a5adc79aae1787723f34b1052cf1  $OLD" | sha256sum -c -
           OLD_CERT=$("$ANDROID_HOME/build-tools/36.0.0/apksigner" verify --print-certs "$OLD" | sed -n 's/^Signer #1 certificate SHA-256 digest: //p' | head -n 1)
           NEW_CERT=$("$ANDROID_HOME/build-tools/36.0.0/apksigner" verify --print-certs "$APK" | sed -n 's/^Signer #1 certificate SHA-256 digest: //p' | head -n 1)
           test -n "$OLD_CERT" && test "$OLD_CERT" = "$NEW_CERT" || { echo 'Certificado de assinatura diferente da versão instalada; publicação cancelada.'; exit 1; }
-          "$ANDROID_HOME/build-tools/36.0.0/aapt" dump badging "$APK" | head -n 1 | grep -E "versionCode='6' versionName='1\\.0\\.3'"
+          "$ANDROID_HOME/build-tools/36.0.0/aapt" dump badging "$APK" | head -n 1 | grep -E "versionCode='7' versionName='1\\.0\\.4'"
       - uses: actions/upload-artifact@v4
         if: env.ANDROID_SIGNING_READY == 'true'
         with:
@@ -69,14 +75,14 @@ jobs:
           if-no-files-found: error
           retention-days: 14
 
-      - name: Publicar APK Android 1.0.3 verificado
+      - name: Publicar APK Android 1.0.4 verificado
         if: env.ANDROID_SIGNING_READY == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           APK=$(find android/app/build/outputs/apk/release -name '*.apk' -type f | head -n 1)
-          if gh release view v1.0.3 --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
-            echo 'Release 1.0.3 já existe. Nada será sobrescrito.'
+          if gh release view v1.0.4 --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            echo 'Release 1.0.4 já existe. Nada será sobrescrito.'
             exit 0
           fi
-          gh release create v1.0.3 "$APK#Meu-Ritmo-1.0.3.apk" --repo "$GITHUB_REPOSITORY" --target "$GITHUB_SHA" --title 'MR: Meu Ritmo App 1.0.3' --notes 'APK assinado com o certificado original, verificado contra a versão 1.0.2, com acesso online e alarmes locais.'
+          gh release create v1.0.4 "$APK#Meu-Ritmo-1.0.4.apk" --repo "$GITHUB_REPOSITORY" --target "$GITHUB_SHA" --title 'Meu Ritmo 1.0.4' --notes 'APK assinado com o certificado original, verificado contra a versão 1.0.3, com acesso online e alarmes locais.'

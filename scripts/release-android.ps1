@@ -5,17 +5,17 @@ param(
 $ErrorActionPreference = 'Stop'
 $root = (Resolve-Path (Join-Path $PSScriptRoot '..')).Path
 $repo = 'JustJao1/meu-ritmo-app'
-$version = '1.0.3'
-$expectedPreviousHash = '2b7ef8cb1923938a6eb1b0a49dd00ca827dacdcb221e941bd7b7c4572fe89396'
-$previousUrl = 'https://github.com/JustJao1/meu-ritmo-app/releases/download/v1.0.2/Meu-Ritmo-1.0.2.apk'
-$oldApk = Join-Path $env:TEMP 'mr-original-v1.0.2-check.apk'
+$version = '1.0.4'
+$expectedPreviousHash = '05289c90bacdf129e1396ca5bc5cb1f1a5b3a5adc79aae1787723f34b1052cf1'
+$previousUrl = 'https://github.com/JustJao1/meu-ritmo-app/releases/download/v1.0.3/Meu-Ritmo-1.0.3.apk'
+$oldApk = Join-Path $env:TEMP 'mr-original-v1.0.3-check.apk'
 $originalLocation = Get-Location
 
 if (-not (Test-Path -LiteralPath $KeystorePath -PathType Leaf)) {
     throw "A chave de assinatura anterior nao foi encontrada em $KeystorePath. Nao crie uma chave nova: ela impediria a atualizacao por cima da versao instalada."
 }
 if (-not (Get-Command gradle -ErrorAction SilentlyContinue)) {
-    throw 'Gradle nao esta disponivel no PATH. Use a instalacao que compilou a versao 1.0.2.'
+    throw 'Gradle nao esta disponivel no PATH. Use a instalacao que compilou a versao 1.0.3.'
 }
 
 $sdk = @($env:ANDROID_SDK_ROOT, $env:ANDROID_HOME, (Join-Path $env:LOCALAPPDATA 'Android\Sdk')) |
@@ -68,8 +68,8 @@ try {
 
     $badging = (& $aapt dump badging $built | Select-Object -First 1) -join ''
     if ($badging -notmatch "name='br\.com\.joaovictor\.meuritmolite'" -or
-        $badging -notmatch "versionCode='6'" -or
-        $badging -notmatch "versionName='1\.0\.3'") {
+        $badging -notmatch "versionCode='7'" -or
+        $badging -notmatch "versionName='1\.0\.4'") {
         throw "Metadados do APK inesperados: $badging"
     }
 
@@ -80,7 +80,7 @@ try {
     }
     $previousDigest = Get-SigningDigest $oldApk
     if ($newDigest -ne $previousDigest) {
-        throw 'Certificado de assinatura diferente da versao 1.0.2. Nao publique: a atualizacao nao sera instalavel por cima.'
+        throw 'Certificado de assinatura diferente da versao 1.0.3. Nao publique: a atualizacao nao sera instalavel por cima.'
     }
 
     $outputDir = Join-Path $root 'release-output'
@@ -92,7 +92,7 @@ try {
     Write-Host "APK assinado e verificado: $outputApk"
     Write-Host "SHA256: $hash"
     Write-Host "Tamanho: $size bytes"
-    Write-Host 'Certificado confere com a versao 1.0.2.'
+    Write-Host 'Certificado confere com a versao 1.0.3.'
 
     if ($Publish) {
         if (-not (Get-Command gh -ErrorAction SilentlyContinue)) {
@@ -107,7 +107,7 @@ try {
         if (@($existingReleases | Where-Object { $_.tagName -eq "v$version" }).Count -gt 0) {
             throw "A release v$version ja existe. Nao sera sobrescrita."
         }
-        & gh release create "v$version" $outputApk --repo $repo --target main --title "MR: Meu Ritmo App $version" --notes 'Atualizacao do aplicativo Android. O ambiente online apresenta as funcoes e os temas atuais de meuritmo.net. Mantida a assinatura da versao 1.0.2 para atualizacao sem reinstalacao.'
+        & gh release create "v$version" $outputApk --repo $repo --target main --title "Meu Ritmo $version" --notes 'Atualizacao do aplicativo Android. O ambiente online apresenta as funcoes e os temas atuais de meuritmo.net. Mantida a assinatura da versao 1.0.3 para atualizacao sem reinstalacao.'
         if ($LASTEXITCODE -ne 0) { throw 'Nao foi possivel publicar a release no GitHub.' }
         Write-Host "Release publicada: https://github.com/$repo/releases/tag/v$version"
         Write-Host 'Ainda e preciso atualizar a pagina de download e a politica de atualizacao do site, apos conferir o arquivo publicado.'
