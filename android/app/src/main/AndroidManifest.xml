@@ -8,7 +8,7 @@
  <uses-permission android:name="android.permission.WAKE_LOCK"/>
  <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
  <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK"/>
- <application android:label="Mr: Meu Ritmo App" android:icon="@drawable/app_icon" android:theme="@style/AppTheme" android:allowBackup="false" android:usesCleartextTraffic="false" android:supportsRtl="true" android:enableOnBackInvokedCallback="false">
+ <application android:label="Meu Ritmo" android:icon="@drawable/app_icon" android:theme="@style/AppTheme" android:allowBackup="false" android:usesCleartextTraffic="false" android:supportsRtl="true" android:enableOnBackInvokedCallback="false">
   <activity android:name=".OnlineActivity" android:exported="true" android:windowSoftInputMode="adjustResize"><intent-filter><action android:name="android.intent.action.MAIN"/><category android:name="android.intent.category.LAUNCHER"/></intent-filter></activity>
   <activity android:name=".MainActivity" android:exported="false" android:windowSoftInputMode="adjustResize"/>
   <receiver android:name=".AlarmReceiver" android:exported="false"/>

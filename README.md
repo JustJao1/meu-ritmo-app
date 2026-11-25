@@ -1,4 +1,4 @@
-# MR: Meu Ritmo App
+# Meu Ritmo® App
 
 Aplicativo Android do [Meu Ritmo](https://meuritmo.net/app), distribuído fora da Google Play Store.
 

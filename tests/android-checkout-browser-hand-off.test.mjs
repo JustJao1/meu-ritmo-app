@@ -20,14 +20,14 @@ test('o pagamento abre no navegador sem fechar a WebView do Meu Ritmo',()=>{
 });
 
 test('publicação nativa exige a mesma chave e certificado da versão instalada',()=>{
- assert(gradle.includes("versionCode 6"));
- assert(gradle.includes("versionName '1.0.3'"));
+ assert(gradle.includes("versionCode 7"));
+ assert(gradle.includes("versionName '1.0.4'"));
  assert(release.includes('ANDROID_KEYSTORE_BASE64'));
  assert(release.includes('ANDROID_SIGNING_STORE_PASSWORD'));
  assert(release.includes('OLD_CERT'));
  assert(release.includes('NEW_CERT'));
  assert(release.includes('test "$OLD_CERT" = "$NEW_CERT"'));
  assert(release.includes('exit 1'));
- assert(release.includes('A versão 1.0.3 NÃO foi publicada.'));
+ assert(release.includes('A versão 1.0.4 NÃO foi publicada.'));
  assert.equal(metadata.version,'1.0.3'); // published and signed APK available
 });
