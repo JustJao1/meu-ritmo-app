@@ -1,5 +1,7 @@
 # Meu Ritmo App
 
+**Project owner and maintainer:** [João Victor da Silva (JustJao1)](https://github.com/JustJao1).
+
 **Android companion for the Meu Ritmo web platform**
 
 [Web application](https://meuritmo.net/app) · [APK releases](https://github.com/JustJao1/meu-ritmo-app/releases) · [Developer portfolio](https://github.com/JustJao1/meu-ritmo/blob/main/PORTFOLIO.md)
