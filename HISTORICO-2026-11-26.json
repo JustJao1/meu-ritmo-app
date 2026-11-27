@@ -1,0 +1,1040 @@
+{
+  "repository": "JustJao1/meu-ritmo-app",
+  "snapshot": "4885932f7905724672cabc9c2b1dfbf28e522fab",
+  "scope": "Histórico alcançável a partir do commit preservado, tal como retornado pela API GitHub; datas e autorias são metadados Git, não certificação jurídica.",
+  "complete": true,
+  "entries": [
+    {
+      "commit": "4885932f7905724672cabc9c2b1dfbf28e522fab",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-26T15:11:38Z",
+      "committer_date": "2026-11-26T15:11:38Z",
+      "subject": "Link official project ownership notice",
+      "signature_verified": false
+    },
+    {
+      "commit": "7e37c29c2b279bd11572aa81379cfc70b08725e7",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-26T15:11:35Z",
+      "committer_date": "2026-11-26T15:11:35Z",
+      "subject": "Document official project ownership and maintenance",
+      "signature_verified": false
+    },
+    {
+      "commit": "07db0bcfb2eab4ec95bee9f43b39e64b4c59e34a",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-26T15:02:04Z",
+      "committer_date": "2026-11-26T15:02:04Z",
+      "subject": "Identify project owner and maintainer",
+      "signature_verified": false
+    },
+    {
+      "commit": "955c61e5d52da899faaef3bfeb256e4382d9f7de",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-25T19:16:01Z",
+      "committer_date": "2026-11-25T19:16:01Z",
+      "subject": "Improve project presentation and link developer portfolio",
+      "signature_verified": false
+    },
+    {
+      "commit": "b577d2aa145aab62c422be49bed732fe7219c82a",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-25T16:47:33Z",
+      "committer_date": "2026-11-25T16:47:33Z",
+      "subject": "Corrige nome Android Meu Ritmo e prepara release 1.0.4",
+      "signature_verified": true
+    },
+    {
+      "commit": "f3afa89eddf807a0f3fe9a764f785caf4f77f496",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-18T18:47:12Z",
+      "committer_date": "2026-11-18T18:47:12Z",
+      "subject": "Atualizar pagina de download para APK 1.0.3 verificado",
+      "signature_verified": false
+    },
+    {
+      "commit": "0d6c5bfb1bfbb63c120b5da629bfc0b80e3bfa31",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-18T18:41:30Z",
+      "committer_date": "2026-11-18T18:41:30Z",
+      "subject": "Corrigir verificacoes da versao 1.0.3 e liberar CI sem chave de assinatura",
+      "signature_verified": false
+    },
+    {
+      "commit": "38cb400e9cbfdb2e34aa1f5b83fe4fbc6b7839e9",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-18T18:39:39Z",
+      "committer_date": "2026-11-18T18:39:39Z",
+      "subject": "Refinar controles Android e preparar versao 1.0.3; atualizar download 1.0.2",
+      "signature_verified": false
+    },
+    {
+      "commit": "a523b82f2fd455bc446128288221fc22f6662316",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-18T18:24:42Z",
+      "committer_date": "2026-11-18T18:24:42Z",
+      "subject": "Corrigir erro de release não encontrada ao publicar APK",
+      "signature_verified": true
+    },
+    {
+      "commit": "a295f69a2a9de2112595d1b883dba970b5164e4a",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-18T18:19:45Z",
+      "committer_date": "2026-11-18T18:19:45Z",
+      "subject": "Resolver falso positivo PropertyEscape do Android Lint no Windows",
+      "signature_verified": true
+    },
+    {
+      "commit": "4663f8d9d5f4d11e7bbbb551dba6519dfae8dc88",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-18T18:15:14Z",
+      "committer_date": "2026-11-18T18:15:14Z",
+      "subject": "Corrigir PropertyEscape na compilação Android Windows",
+      "signature_verified": true
+    },
+    {
+      "commit": "91f53e9a8d476e006296e32e0bda3073c1b685ed",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-18T17:49:32Z",
+      "committer_date": "2026-11-18T17:49:32Z",
+      "subject": "Preparar Android 1.0.2 com checkout externo e assinatura segura",
+      "signature_verified": true
+    },
+    {
+      "commit": "22186079a40e449df5e7f08493d896bdbfc7bdd7",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-16T03:11:25Z",
+      "committer_date": "2026-11-16T03:11:25Z",
+      "subject": "ci(android): executar teste de inicialização em emulador na branch principal",
+      "signature_verified": false
+    },
+    {
+      "commit": "cabe488a19544fcc9d1e1d82f06afe736cb26be3",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-16T03:11:22Z",
+      "committer_date": "2026-11-16T03:11:22Z",
+      "subject": "ci(visual): auditar 22 temas em 44 telas no branch principal",
+      "signature_verified": false
+    },
+    {
+      "commit": "f11a6b1c9a5e2694333738a83954703176d804ad",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-16T03:07:49Z",
+      "committer_date": "2026-11-16T03:07:49Z",
+      "subject": "ci(android): compilar e publicar 1.0.2 apenas com a chave original e certificado validado",
+      "signature_verified": false
+    },
+    {
+      "commit": "2025414c3d52a941100de6875c6c664e3a488e0c",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-16T02:38:43Z",
+      "committer_date": "2026-11-16T02:38:43Z",
+      "subject": "test(android): diferenciar versão nova em preparação do APK oficial publicado",
+      "signature_verified": false
+    },
+    {
+      "commit": "b00f4f771d887b4432fe5cab5efbd98dad8b9783",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-16T02:38:40Z",
+      "committer_date": "2026-11-16T02:38:40Z",
+      "subject": "build(android): validar assinatura do APK 1.0.2 contra release oficial 1.0.1",
+      "signature_verified": false
+    },
+    {
+      "commit": "98e8d95001db8cb33ac4e9e67556be83729b73a1",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-16T02:38:36Z",
+      "committer_date": "2026-11-16T02:38:36Z",
+      "subject": "build(android): preparar APK 1.0.2 com código de versão superior",
+      "signature_verified": false
+    },
+    {
+      "commit": "d9765ae53e91e453c4192257df84c0537d156767",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-16T00:39:45Z",
+      "committer_date": "2026-11-16T00:39:45Z",
+      "subject": "test(android): validar uso offline com política de versão já verificada",
+      "signature_verified": false
+    },
+    {
+      "commit": "ac78074c861ab9a34dcd1a2b175dfc4aedd83947",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-16T00:39:31Z",
+      "committer_date": "2026-11-16T00:39:31Z",
+      "subject": "fix(android): permitir alarmes offline após verificação válida de versão",
+      "signature_verified": false
+    },
+    {
+      "commit": "bb93ca605046844514ef018db1e03349bd2bbe5d",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-16T00:38:51Z",
+      "committer_date": "2026-11-16T00:38:51Z",
+      "subject": "test(android): exigir acesso visível a alarmes nativos no tema sem ActionBar",
+      "signature_verified": false
+    },
+    {
+      "commit": "f0edcb1b5691f4dca826ef5f774dd4809f6accf1",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-16T00:38:35Z",
+      "committer_date": "2026-11-16T00:38:35Z",
+      "subject": "fix(android): expor controles nativos de alarmes e atualização sem ActionBar",
+      "signature_verified": false
+    },
+    {
+      "commit": "1f42172bdb32960148a4d0b8f7f1218bbf9f81c8",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-16T00:34:02Z",
+      "committer_date": "2026-11-16T00:34:02Z",
+      "subject": "test(android): validar versão do APK e entrada online com alarmes locais separados",
+      "signature_verified": false
+    },
+    {
+      "commit": "60cd5231690f897f992182cf00927232b55e8a45",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-16T00:33:39Z",
+      "committer_date": "2026-11-16T00:33:39Z",
+      "subject": "docs(android): documentar acesso online e isolamento dos alarmes locais",
+      "signature_verified": false
+    },
+    {
+      "commit": "64dd4270aa1968b4c02603a3671a3e4fec3a42d3",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-16T00:33:23Z",
+      "committer_date": "2026-11-16T00:33:23Z",
+      "subject": "fix(release): atualizar manifesto público para APK 1.0.1 e SHA-256 real",
+      "signature_verified": false
+    },
+    {
+      "commit": "2084ad791b51a32fbc4370390b6c2be75c841ac7",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-14T17:29:58Z",
+      "committer_date": "2026-11-14T17:29:58Z",
+      "subject": "Atualiza teste de download da versão 1.0.1",
+      "signature_verified": false
+    },
+    {
+      "commit": "11f01ab31d4c9b60f652cc8243d35bf937f43789",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-14T17:29:54Z",
+      "committer_date": "2026-11-14T17:29:54Z",
+      "subject": "Atualiza teste do link de instalação Android 1.0.1",
+      "signature_verified": false
+    },
+    {
+      "commit": "945aadb1dd1e0601ae3be82b9bc5c3ed1c26ead2",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-14T17:29:52Z",
+      "committer_date": "2026-11-14T17:29:52Z",
+      "subject": "Atualiza página de instalação para APK Android 1.0.1",
+      "signature_verified": false
+    },
+    {
+      "commit": "fcdd43d84c12c25e8aa8b9294f52e707acd7be64",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-14T16:53:47Z",
+      "committer_date": "2026-11-14T16:53:47Z",
+      "subject": "Impede incluir APKs compilados na arvore de codigo",
+      "signature_verified": false
+    },
+    {
+      "commit": "f824b2db9afafdf81cb4817a20e127ca00f32b75",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-14T16:53:31Z",
+      "committer_date": "2026-11-14T16:53:31Z",
+      "subject": "Prepara compilacao e publicacao segura do APK 1.0.1 com assinatura original",
+      "signature_verified": false
+    },
+    {
+      "commit": "0eeda247b4dc593a1469ca0fffa0536057636eda",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-14T16:52:28Z",
+      "committer_date": "2026-11-14T16:52:28Z",
+      "subject": "Alinha versão do projeto com Android v1.0.1",
+      "signature_verified": false
+    },
+    {
+      "commit": "298310917adc1fd81bafb37eb44d931b61bd4f5a",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-14T16:52:26Z",
+      "committer_date": "2026-11-14T16:52:26Z",
+      "subject": "Prepara Android v1.0.1 para atualização sobre v1.0.0",
+      "signature_verified": false
+    },
+    {
+      "commit": "f6520fd9d489e3e04c15c0701e3766dd2f094e08",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-14T00:49:02Z",
+      "committer_date": "2026-11-14T00:49:02Z",
+      "subject": "Atualiza teste de instalação para release Android 1.0.0",
+      "signature_verified": false
+    },
+    {
+      "commit": "2df2ecc2c748141a82dff97d4baf0301671d867d",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-14T00:49:00Z",
+      "committer_date": "2026-11-14T00:49:00Z",
+      "subject": "Atualiza teste de instalação para release Android 1.0.0",
+      "signature_verified": false
+    },
+    {
+      "commit": "083e2f656a249b5cf1d1ed60f78b6b651a9fd346",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-14T00:47:17Z",
+      "committer_date": "2026-11-14T00:47:17Z",
+      "subject": "Publica metadados do Android v1.0.0 e link oficial",
+      "signature_verified": false
+    },
+    {
+      "commit": "bcfc9e85ebee9e7523e26c2cb550f01a6b61e86e",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-14T00:47:10Z",
+      "committer_date": "2026-11-14T00:47:10Z",
+      "subject": "Atualiza página de instalação para APK oficial v1.0.0",
+      "signature_verified": false
+    },
+    {
+      "commit": "ded4b95c97096f1a7f4d67478337338e88cd8211",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-14T00:03:02Z",
+      "committer_date": "2026-11-14T00:03:02Z",
+      "subject": "Enable Android WebView image selection for profile photo uploads",
+      "signature_verified": false
+    },
+    {
+      "commit": "83c8ea61b781457cb683e04ac4a832b9bf36890b",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T23:28:48Z",
+      "committer_date": "2026-11-13T23:28:48Z",
+      "subject": "Use distinctive repeating dual-frequency alarm tone and stronger vibration on Android",
+      "signature_verified": false
+    },
+    {
+      "commit": "e29fe3475054b351b16c0b7fb1131ed775e6ba87",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T23:26:10Z",
+      "committer_date": "2026-11-13T23:26:10Z",
+      "subject": "Keep native alarm and reload actions in Android options menu",
+      "signature_verified": false
+    },
+    {
+      "commit": "235e5fd3193954ac7e240dc102075f6fdf40c452",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T23:26:04Z",
+      "committer_date": "2026-11-13T23:26:04Z",
+      "subject": "Remove browser-like Android app toolbar and mark native app context",
+      "signature_verified": false
+    },
+    {
+      "commit": "17c87f95fa618f090b7a9d937d5d44f20f9dbec8",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T22:51:30Z",
+      "committer_date": "2026-11-13T22:51:30Z",
+      "subject": "Correct iPhone installation guide for Safari three-dot menu",
+      "signature_verified": false
+    },
+    {
+      "commit": "26ee3392388d949a8d3013b9bcee511dd668d008",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T22:50:19Z",
+      "committer_date": "2026-11-13T22:50:19Z",
+      "subject": "Provide branded install manifest and Mr: Meu Ritmo app name",
+      "signature_verified": false
+    },
+    {
+      "commit": "70f0357076855c7121b5b438d1161e9f37cee660",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T22:50:15Z",
+      "committer_date": "2026-11-13T22:50:15Z",
+      "subject": "Set iPhone home-screen title and icon and clarify Chrome three-dot installation steps",
+      "signature_verified": false
+    },
+    {
+      "commit": "e8c00ab3dd01d5e387c65f7fd0375e8142522e08",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T22:43:27Z",
+      "committer_date": "2026-11-13T22:43:27Z",
+      "subject": "Make install and return buttons compact and usable on phones",
+      "signature_verified": false
+    },
+    {
+      "commit": "697d866976a9fe47dd2207e5c16c9718a0ba0e04",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T22:43:21Z",
+      "committer_date": "2026-11-13T22:43:21Z",
+      "subject": "Remove decorative symbols and restore mobile return link",
+      "signature_verified": false
+    },
+    {
+      "commit": "1f3ff6753077e5a7329d0a4b3969eee692e8d2be",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T19:54:13Z",
+      "committer_date": "2026-11-13T19:54:13Z",
+      "subject": "Prepare official MR Meu Ritmo App 1.0.0 release version",
+      "signature_verified": false
+    },
+    {
+      "commit": "ce915613726a8bb9257cae800caba9a67a590533",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T19:53:01Z",
+      "committer_date": "2026-11-13T19:53:01Z",
+      "subject": "Declare approximate location permission for optional weather lookup",
+      "signature_verified": false
+    },
+    {
+      "commit": "b8ad858e46a6198cf95e73e007df49f989b6287d",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T19:52:56Z",
+      "committer_date": "2026-11-13T19:52:56Z",
+      "subject": "Request Android location permission for weather geolocation in online WebView",
+      "signature_verified": false
+    },
+    {
+      "commit": "ee3f69f96eb6eab079c2d981175124e716d6fd8d",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T19:15:32Z",
+      "committer_date": "2026-11-13T19:15:32Z",
+      "subject": "Avoid false positives in Android emulator crash check",
+      "signature_verified": false
+    },
+    {
+      "commit": "48d13379f1b2b9e8fe56b264edbf980dc9fd9a22",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T19:15:26Z",
+      "committer_date": "2026-11-13T19:15:26Z",
+      "subject": "Add opt-in Android emulator smoke test with install, launch and crash diagnostics",
+      "signature_verified": false
+    },
+    {
+      "commit": "d99fc773c8f1eef690ff154c6c78183e8e42698e",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T19:09:55Z",
+      "committer_date": "2026-11-13T19:09:55Z",
+      "subject": "Fix API 26 compatibility by removing API 27-only navigation bar theme attribute",
+      "signature_verified": false
+    },
+    {
+      "commit": "754d0a4148e9863fcc1ac00ee48df9e6d4d33c50",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T19:05:04Z",
+      "committer_date": "2026-11-13T19:05:04Z",
+      "subject": "Fix duplicate MainActivity onResume method and preserve alarm refresh",
+      "signature_verified": false
+    },
+    {
+      "commit": "0c51e5a69296801df3ed35a9618067b2dad07a8c",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T19:01:49Z",
+      "committer_date": "2026-11-13T19:01:49Z",
+      "subject": "Fix YAML parsing of Android sdkmanager command in CI workflows",
+      "signature_verified": false
+    },
+    {
+      "commit": "81c894d400fbc19d90ab817fd62e21cdc8ff7bad",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T19:01:47Z",
+      "committer_date": "2026-11-13T19:01:47Z",
+      "subject": "Fix YAML parsing of Android sdkmanager command in CI workflows",
+      "signature_verified": false
+    },
+    {
+      "commit": "4d7a21f49c1687d5ee42c4814467e9f2b765c224",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T18:59:29Z",
+      "committer_date": "2026-11-13T18:59:29Z",
+      "subject": "Use preinstalled GitHub runner Android SDK instead of failing setup-android action",
+      "signature_verified": false
+    },
+    {
+      "commit": "16d4d9903143bbea2bd38942effcced094d03d08",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T18:59:27Z",
+      "committer_date": "2026-11-13T18:59:27Z",
+      "subject": "Use preinstalled GitHub runner Android SDK instead of failing setup-android action",
+      "signature_verified": false
+    },
+    {
+      "commit": "08f981294ba5c9cc03128157e1e6b1ad05cbbd45",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T18:54:54Z",
+      "committer_date": "2026-11-13T18:54:54Z",
+      "subject": "Increment Android version code for upgrade-safe release candidate",
+      "signature_verified": false
+    },
+    {
+      "commit": "d7d8a5e854a73f02b47ccf3e5d8bcb4ffdd144aa",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T18:54:49Z",
+      "committer_date": "2026-11-13T18:54:49Z",
+      "subject": "Configure release APK signing from protected GitHub Actions secrets",
+      "signature_verified": false
+    },
+    {
+      "commit": "a8cffe829059431a51e1457aa14ca977e5f8e5ea",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T18:54:42Z",
+      "committer_date": "2026-11-13T18:54:42Z",
+      "subject": "Add manual signed release pipeline with mandatory tests and signature verification",
+      "signature_verified": false
+    },
+    {
+      "commit": "85e9d67471b36a6dbbbc5876f0c51cdb78139b36",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T18:54:31Z",
+      "committer_date": "2026-11-13T18:54:31Z",
+      "subject": "Gate Android build on lint, unit tests, APK metadata and SHA-256",
+      "signature_verified": false
+    },
+    {
+      "commit": "d565244e227c58f879457845b54da036e90a61e3",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T18:54:25Z",
+      "committer_date": "2026-11-13T18:54:25Z",
+      "subject": "Restrict Android external navigation to HTTPS and disable scripted popups",
+      "signature_verified": false
+    },
+    {
+      "commit": "bf9b5cec95e779dc67dc51ad2abe812a69fde02d",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T18:47:45Z",
+      "committer_date": "2026-11-13T18:47:45Z",
+      "subject": "Apply update verification blocker before allowing Android app use",
+      "signature_verified": false
+    },
+    {
+      "commit": "c882139b94479cb51f8c71405ba075ad5aaca775",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T18:47:43Z",
+      "committer_date": "2026-11-13T18:47:43Z",
+      "subject": "Apply update verification blocker before allowing Android app use",
+      "signature_verified": false
+    },
+    {
+      "commit": "b3d5e7a6eef7a7ad8c9e43d265c75504a035161d",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T18:47:37Z",
+      "committer_date": "2026-11-13T18:47:37Z",
+      "subject": "Block application interaction until mandatory update policy verifies",
+      "signature_verified": false
+    },
+    {
+      "commit": "68901a52dec03bdd87d28139f2e9fce2b41bd29e",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T18:47:27Z",
+      "committer_date": "2026-11-13T18:47:27Z",
+      "subject": "Keep online activity layout available for update gating",
+      "signature_verified": false
+    },
+    {
+      "commit": "710da15a938ed70dd9a2f09095421a67108a3b60",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T18:46:27Z",
+      "committer_date": "2026-11-13T18:46:27Z",
+      "subject": "Prevent opening invalid update URL when version service is unreachable",
+      "signature_verified": false
+    },
+    {
+      "commit": "132381d491f26bb3dd330db1c88a55fa827741b0",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T18:45:01Z",
+      "committer_date": "2026-11-13T18:45:01Z",
+      "subject": "Improve online Android error handling, reload and cookie security",
+      "signature_verified": false
+    },
+    {
+      "commit": "20a610b89483e75e553048e0038f9e6a48c0659a",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T18:44:54Z",
+      "committer_date": "2026-11-13T18:44:54Z",
+      "subject": "Retry mandatory version verification after network failures",
+      "signature_verified": false
+    },
+    {
+      "commit": "6cbc4ac05bae812f6d09016a3b560a8d0b419333",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T18:44:48Z",
+      "committer_date": "2026-11-13T18:44:48Z",
+      "subject": "Fail closed when mandatory update check cannot verify version",
+      "signature_verified": false
+    },
+    {
+      "commit": "a062afaefbd911e54c986039020e4de676827816",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T18:43:42Z",
+      "committer_date": "2026-11-13T18:43:42Z",
+      "subject": "Launch online MR App while retaining native alarm activity",
+      "signature_verified": false
+    },
+    {
+      "commit": "2f50968241ae69d31d580f3bdbfd057357264ce8",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T18:43:36Z",
+      "committer_date": "2026-11-13T18:43:36Z",
+      "subject": "Add online Android app shell with shared website accounts and native alarm access",
+      "signature_verified": false
+    },
+    {
+      "commit": "f53eac75f1918af6a5e232e806b762465e7794b5",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T18:32:45Z",
+      "committer_date": "2026-11-13T18:32:45Z",
+      "subject": "Install Gradle explicitly in Android build workflow",
+      "signature_verified": false
+    },
+    {
+      "commit": "ed68fb46f632ae844bcd565558578d2010b52088",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T18:30:23Z",
+      "committer_date": "2026-11-13T18:30:23Z",
+      "subject": "Build Android test APK automatically on GitHub Actions",
+      "signature_verified": false
+    },
+    {
+      "commit": "f33b843c82e27c2545e79da363d24a26dd949504",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T18:30:10Z",
+      "committer_date": "2026-11-13T18:30:10Z",
+      "subject": "Enforce remote mandatory APK updates on launch and resume",
+      "signature_verified": false
+    },
+    {
+      "commit": "ffa4cd81b61068174d1ebe311a61d6068bf09823",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T18:30:03Z",
+      "committer_date": "2026-11-13T18:30:03Z",
+      "subject": "Use installed Android package version for update enforcement",
+      "signature_verified": false
+    },
+    {
+      "commit": "7b8503f096b3acbd356b8f4fa40eb0eff1b3d37a",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T18:29:57Z",
+      "committer_date": "2026-11-13T18:29:57Z",
+      "subject": "Add Android mandatory version gate",
+      "signature_verified": false
+    },
+    {
+      "commit": "0363a0c42881a9a94cff3a24a08078979a7bad0e",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T18:18:41Z",
+      "committer_date": "2026-11-13T18:18:41Z",
+      "subject": "Merge pull request #5 from JustJao1/fix/unified-logo-tab-2026-11-13",
+      "signature_verified": true
+    },
+    {
+      "commit": "30470d3b87116e1971d4c48bb9b3f8bec19b291e",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T18:18:10Z",
+      "committer_date": "2026-11-13T18:18:10Z",
+      "subject": "style: display original tab logo instead of simulated text icon",
+      "signature_verified": false
+    },
+    {
+      "commit": "16cd6471d3545909147884382284244f31beb8de",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T18:18:05Z",
+      "committer_date": "2026-11-13T18:18:05Z",
+      "subject": "style: display original tab logo instead of simulated text icon",
+      "signature_verified": false
+    },
+    {
+      "commit": "4df9b4ef2b713faf46abf466911c060bb5186991",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T18:18:01Z",
+      "committer_date": "2026-11-13T18:18:01Z",
+      "subject": "assets: bundle canonical browser tab logo with Android app UI",
+      "signature_verified": false
+    },
+    {
+      "commit": "4c9f0390db19d7b8fbe82d98a052619621451d9c",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T18:17:47Z",
+      "committer_date": "2026-11-13T18:17:47Z",
+      "subject": "brand: reuse exact tab icon in app website and Android web UI",
+      "signature_verified": false
+    },
+    {
+      "commit": "a0400b238f7ab04771b55601747a888be529ea3a",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T18:17:44Z",
+      "committer_date": "2026-11-13T18:17:44Z",
+      "subject": "brand: reuse exact tab icon in app website and Android web UI",
+      "signature_verified": false
+    },
+    {
+      "commit": "957ca342f1bb00201d5915f54680940b10966455",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T18:14:08Z",
+      "committer_date": "2026-11-13T18:14:08Z",
+      "subject": "Merge pull request #4 from JustJao1/fix/app-badge-buttons-font-2026-11-13",
+      "signature_verified": true
+    },
+    {
+      "commit": "1051bd7c5cdffa36810b849bbbb22ee62cc360b8",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T18:13:36Z",
+      "committer_date": "2026-11-13T18:13:36Z",
+      "subject": "test: verify APP badge and logged-in return destination",
+      "signature_verified": false
+    },
+    {
+      "commit": "8cb8820973223b419ecb59e52729ffc6d22cb9ca",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T18:13:21Z",
+      "committer_date": "2026-11-13T18:13:21Z",
+      "subject": "fix: return app visitors to authenticated /app instead of public homepage",
+      "signature_verified": false
+    },
+    {
+      "commit": "5edb0a18ed70d53af22439740816ba614d9020cb",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T18:11:55Z",
+      "committer_date": "2026-11-13T18:11:55Z",
+      "subject": "design: strengthen typography and button affordances on app install page",
+      "signature_verified": false
+    },
+    {
+      "commit": "3174a4bcc444cf0c96d3d61f819628b0fc5ef009",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T18:11:52Z",
+      "committer_date": "2026-11-13T18:11:52Z",
+      "subject": "design: add APP badge next to brand on installation page",
+      "signature_verified": false
+    },
+    {
+      "commit": "02b04a6d8e501f416cb2c8ef6614247231ea969f",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T18:09:07Z",
+      "committer_date": "2026-11-13T18:09:07Z",
+      "subject": "Merge pull request #3 from JustJao1/design/app-install-unified-theme-2026-11-13",
+      "signature_verified": true
+    },
+    {
+      "commit": "b17cddb918a88dce3eb1f277072ab80adfa527f9",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T18:08:25Z",
+      "committer_date": "2026-11-13T18:08:25Z",
+      "subject": "test: verify theme handoff, matching typography and preserved install utilities",
+      "signature_verified": false
+    },
+    {
+      "commit": "7baff144b01bdae12614806025b2ccab05282a6c",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T18:08:22Z",
+      "committer_date": "2026-11-13T18:08:22Z",
+      "subject": "test: validate redesigned responsive platform installation layout",
+      "signature_verified": false
+    },
+    {
+      "commit": "2f6c42983f850ec3c0232d54ae57a62ea1bf2b10",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T18:07:55Z",
+      "committer_date": "2026-11-13T18:07:55Z",
+      "subject": "design: align typography and editorial layout with main site across 22 themes",
+      "signature_verified": false
+    },
+    {
+      "commit": "0ca81030a7bde7dc018f519099aed5956348b980",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T18:07:25Z",
+      "committer_date": "2026-11-13T18:07:25Z",
+      "subject": "design: rebuild app distribution page with restrained editorial layout and platform clarity",
+      "signature_verified": false
+    },
+    {
+      "commit": "95a2e386b0e6be3fe14ec457b425ed762f7624ae",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T18:07:06Z",
+      "committer_date": "2026-11-13T18:07:06Z",
+      "subject": "feat: accept safe 22-theme palette handoff from main Meu Ritmo",
+      "signature_verified": false
+    },
+    {
+      "commit": "13bfa96d6fa2649bfd8337e91cc705f610c8acab",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T18:01:48Z",
+      "committer_date": "2026-11-13T18:01:48Z",
+      "subject": "Merge pull request #2 from JustJao1/brand/meu-ritmo-app-2026-11-13",
+      "signature_verified": true
+    },
+    {
+      "commit": "c5fe88f99452e8f9b2deabc131376773def413e4",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T18:01:10Z",
+      "committer_date": "2026-11-13T18:01:10Z",
+      "subject": "brand: rename visible Lite branding to Mr: Meu Ritmo App",
+      "signature_verified": false
+    },
+    {
+      "commit": "b0a888b752eff0175076ab0da6f6d11feea1751c",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T18:01:07Z",
+      "committer_date": "2026-11-13T18:01:07Z",
+      "subject": "brand: rename visible Lite branding to Mr: Meu Ritmo App",
+      "signature_verified": false
+    },
+    {
+      "commit": "bccdc527186b094949015dc020ddd54d2fe4b2f7",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T18:01:04Z",
+      "committer_date": "2026-11-13T18:01:04Z",
+      "subject": "brand: rename visible Lite branding to Mr: Meu Ritmo App",
+      "signature_verified": false
+    },
+    {
+      "commit": "6d24a3586e86b5253e26ddfa379af9b6c39990f4",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T18:01:02Z",
+      "committer_date": "2026-11-13T18:01:02Z",
+      "subject": "brand: rename visible Lite branding to Mr: Meu Ritmo App",
+      "signature_verified": false
+    },
+    {
+      "commit": "d878a32e94fd04bd280793d11722ef33045eef7d",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T18:00:59Z",
+      "committer_date": "2026-11-13T18:00:59Z",
+      "subject": "brand: rename visible Lite branding to Mr: Meu Ritmo App",
+      "signature_verified": false
+    },
+    {
+      "commit": "c5e5ce003d88e059593f370acf2c90f13d3c53d5",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T18:00:56Z",
+      "committer_date": "2026-11-13T18:00:56Z",
+      "subject": "brand: rename visible Lite branding to Mr: Meu Ritmo App",
+      "signature_verified": false
+    },
+    {
+      "commit": "8bcd7197228dfb32c852f7bffd786ab1fcee5c86",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T17:58:45Z",
+      "committer_date": "2026-11-13T17:58:45Z",
+      "subject": "Merge pull request #1 from JustJao1/feature/android-ios-distribution-2026-11-13",
+      "signature_verified": true
+    },
+    {
+      "commit": "ff8200724e13bba7921c65b45733284c91fe1feb",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T17:57:39Z",
+      "committer_date": "2026-11-13T17:57:39Z",
+      "subject": "test: cover Android APK and iPhone home screen distribution options",
+      "signature_verified": false
+    },
+    {
+      "commit": "3bdf2a188cd1e22a66bc8cc2abe639f85df9d2e8",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T17:57:37Z",
+      "committer_date": "2026-11-13T17:57:37Z",
+      "subject": "ci: publish Lite platform landing on successful main branch updates",
+      "signature_verified": false
+    },
+    {
+      "commit": "9a3a52aa9b77a751c00e30ba72b8c0404e33baf9",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T17:57:15Z",
+      "committer_date": "2026-11-13T17:57:15Z",
+      "subject": "feat: show iPhone installation guidance on iOS devices",
+      "signature_verified": false
+    },
+    {
+      "commit": "f85d484dd64e844312cc6e3159a2e72a84cb44ec",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T17:57:12Z",
+      "committer_date": "2026-11-13T17:57:12Z",
+      "subject": "design: responsive Android and iPhone installation cards",
+      "signature_verified": false
+    },
+    {
+      "commit": "b73cd84791cd0a91df3fabdc01d7eb6321f472a3",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T17:56:58Z",
+      "committer_date": "2026-11-13T17:56:58Z",
+      "subject": "feat: offer Android APK and iPhone home screen install instructions",
+      "signature_verified": false
+    },
+    {
+      "commit": "c0d5170b604b62898c47fd337321cc1f280e0efa",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T16:21:32Z",
+      "committer_date": "2026-11-13T16:21:32Z",
+      "subject": "Use supported Ubuntu 24.04 for Playwright Chromium",
+      "signature_verified": false
+    },
+    {
+      "commit": "d9ba79e687af3556be1d94c8c62a4772409839a5",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T16:21:02Z",
+      "committer_date": "2026-11-13T16:21:02Z",
+      "subject": "Run screenshot-based visual checks on audit branch only",
+      "signature_verified": false
+    },
+    {
+      "commit": "f8060a80e10ad63f9ffbbee9e22f3d14b81762c8",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T16:20:55Z",
+      "committer_date": "2026-11-13T16:20:55Z",
+      "subject": "Add browser visual audit for all 22 themes at desktop and mobile sizes",
+      "signature_verified": false
+    },
+    {
+      "commit": "16f3fb838b539ccedb97a676b8e9d5f2514e00cf",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T16:18:46Z",
+      "committer_date": "2026-11-13T16:18:46Z",
+      "subject": "Audit theme contrast and interactive hover states without redesign",
+      "signature_verified": false
+    },
+    {
+      "commit": "fa99e697896c0827f530757716627da72a6a7e50",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T16:18:38Z",
+      "committer_date": "2026-11-13T16:18:38Z",
+      "subject": "Choose readable accent foreground across light and dark themes",
+      "signature_verified": false
+    },
+    {
+      "commit": "0874598a60666c1f227e670e08149a765be4ba51",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T16:16:48Z",
+      "committer_date": "2026-11-13T16:16:48Z",
+      "subject": "Document joint-release prerequisites and pending real-device tests",
+      "signature_verified": false
+    },
+    {
+      "commit": "5d9f12d74f0e9ee4f4e635f58980debcbcd35a67",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T16:16:19Z",
+      "committer_date": "2026-11-13T16:16:19Z",
+      "subject": "Test Android allowlist for appearance-only network access",
+      "signature_verified": false
+    },
+    {
+      "commit": "16e91087942305fce1c1dab43002033922734a49",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T16:16:11Z",
+      "committer_date": "2026-11-13T16:16:11Z",
+      "subject": "Improve linked theme contrast and refresh when connectivity returns",
+      "signature_verified": false
+    },
+    {
+      "commit": "2687922b280b27b8544ced0b92b2105dd2fb76d1",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T16:15:55Z",
+      "committer_date": "2026-11-13T16:15:55Z",
+      "subject": "Allow CORS preflight for read-only appearance sync",
+      "signature_verified": false
+    },
+    {
+      "commit": "bb5dc32d1fcc3f5db5880d5d4f3c6e31c8f0ba7f",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T16:15:47Z",
+      "committer_date": "2026-11-13T16:15:47Z",
+      "subject": "Permit only read-only appearance sync requests through Android WebView",
+      "signature_verified": false
+    },
+    {
+      "commit": "ffc02fe9a8e38eaa144eab2f4de5283d96720141",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T16:15:34Z",
+      "committer_date": "2026-11-13T16:15:34Z",
+      "subject": "Add regression checks for shared appearance without altering user data",
+      "signature_verified": false
+    },
+    {
+      "commit": "2c6303150a1d12af96b0515608066aab30b7f59a",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T16:12:18Z",
+      "committer_date": "2026-11-13T16:12:18Z",
+      "subject": "Allow appearance-only HTTPS connection to main domain",
+      "signature_verified": false
+    },
+    {
+      "commit": "e9a08475301501107a2c3ed74739267228a84053",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T16:12:12Z",
+      "committer_date": "2026-11-13T16:12:12Z",
+      "subject": "Replace Lite-specific palettes with shared theme CSS variables",
+      "signature_verified": false
+    },
+    {
+      "commit": "60dd3d99f59ca14596ac79f225c3ea697eae2610",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T16:11:59Z",
+      "committer_date": "2026-11-13T16:11:59Z",
+      "subject": "Use main account appearance in Lite with offline cache and explicit pairing",
+      "signature_verified": false
+    },
+    {
+      "commit": "277fd54c9b11a86d9f423f7978eca044eb0e9103",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T14:04:21Z",
+      "committer_date": "2026-11-13T14:04:21Z",
+      "subject": "Style persistent Lite themes while retaining original appearance",
+      "signature_verified": false
+    },
+    {
+      "commit": "af644097444deced2988bec491132991a0b92451",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T14:04:06Z",
+      "committer_date": "2026-11-13T14:04:06Z",
+      "subject": "Save Lite theme preference and add appearance selector",
+      "signature_verified": false
+    },
+    {
+      "commit": "6b0b669e8c318ecbcf2f79184c8a68a0332a4af0",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T02:13:46Z",
+      "committer_date": "2026-11-13T02:13:46Z",
+      "subject": "Configura publicação direta da distribuição Lite",
+      "signature_verified": true
+    },
+    {
+      "commit": "1c81399b5edf2ed2c0dad526815d70ef11581286",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T02:12:52Z",
+      "committer_date": "2026-11-13T02:12:52Z",
+      "subject": "Mantém testes do Lite e conferência de integridade do APK",
+      "signature_verified": true
+    },
+    {
+      "commit": "2293597b17957ae51abf8c792a0a562a4aa5c0fc",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T02:10:30Z",
+      "committer_date": "2026-11-13T02:10:30Z",
+      "subject": "Distribuição independente preservando o APK",
+      "signature_verified": false
+    },
+    {
+      "commit": "83267a5d0d1cfe62c7bee99e7db54e18c81b3ccd",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-13T02:09:00Z",
+      "committer_date": "2026-11-13T02:09:00Z",
+      "subject": "Prepara distribuição independente do Lite",
+      "signature_verified": true
+    },
+    {
+      "commit": "c03f0c5eab57e71df87859ebbc094c1f02f8ae68",
+      "author_login": "github-actions[bot]",
+      "author_date": "2026-11-12T21:41:41Z",
+      "committer_date": "2026-11-12T21:41:41Z",
+      "subject": "Publica o código completo do meu-ritmo-lite",
+      "signature_verified": false
+    },
+    {
+      "commit": "751145180378d5f3b1ac65fd5ab63c55c482d4f7",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-12T21:41:28Z",
+      "committer_date": "2026-11-12T21:41:28Z",
+      "subject": "Prepara importação do Lite e publicação do APK",
+      "signature_verified": true
+    },
+    {
+      "commit": "2d36cdf6310ef7e2ae12ee50701bf74d41536ea7",
+      "author_login": "JustJao1",
+      "author_date": "2026-11-12T21:29:17Z",
+      "committer_date": "2026-11-12T21:29:17Z",
+      "subject": "Initial commit",
+      "signature_verified": true
+    }
+  ]
+}
