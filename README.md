@@ -30,3 +30,18 @@ O diretório `dist` contém a página de instalação. `app-web` mantém o módu
 Execute os testes antes de criar outra versão. Para atualizar um APK já instalado, é necessário recompilar e assinar com **a mesma chave privada** usada na versão anterior. O fluxo de preparação está em `.github/workflows/android-release.yml` e o script local em `scripts/release-android.ps1`. Não publique APK não assinado, com outra chave ou com a versão anterior.
 
 Os alarmes dependem das permissões do Android e podem sofrer restrições de bateria, volume e do fabricante; não funcionam com o aparelho desligado.
+
+
+## Engineering evidence / Evidências de engenharia
+
+[Architecture, decisions and bilingual walkthrough / Arquitetura, decisões e demonstração bilíngue](docs/engineering-quality.md).
+
+Measured snapshot / Registro de 28/11/2026:
+
+PT: Workflow existente aprovado; não houve novo teste em dispositivo ou assinatura de APK.
+
+EN: Existing verification workflow passed; no new device or APK signing validation.
+
+[Actual GitHub Actions run / Execução real de CI](https://github.com/JustJao1/meu-ritmo-app/actions/runs/46110698089).
+
+[Portfolio evidence / Evidências no portfólio](https://justjao1.vercel.app/#engineering).
